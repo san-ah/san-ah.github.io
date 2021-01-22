@@ -1,4 +1,19 @@
-# github 사용하기
+## Installation
 
-[마크다운 문법 공부하기 좋은 링크](https://wonderbout.tistory.com/115)
+Install dependencies:
 
+```
+npm install
+```
+
+Compile the code for development and start a local server:
+
+```
+npm start
+```
+
+Create the build:
+
+```
+npm run build
+```
