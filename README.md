@@ -1,4 +1,4 @@
-# [sanah-dev.github.io]
+# sanah-dev.github.io
 
 Hello 😊
 
