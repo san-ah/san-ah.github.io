@@ -1,8 +1,55 @@
 <h1>{{ title | uppercase }}</h1>
 
+
+<!-- 1. 기본 배열 만들기 -->
 <div>
-  <input #items type="text" ng-model="item" />
-  <button (click)="onclickAdd(items.value); items.value = ''">추가하기</button>
+  <h3>1. 기본 배열 만들기</h3>
+  <ul *ngFor="let atom of arr; let i=index">
+    <li>{{ i }}</li>
+  </ul>
 </div>
 
-<app-paragraph [items]="items"></app-paragraph>
+
+<!-- 2. 입력한값 실시간으로 출력하기 -->
+<div>
+  <h3>2. 입력한 값 실시간으로 출력하기</h3>
+  <input type="text" [(ngModel)]="myData" />
+  <p>입력한 값은: {{ myData }}</p>
+</div>
+
+
+<!-- 3. 자식 컴포넌트에 데이터 전달하기 -->
+<app-child-data [result]="result"></app-child-data>
+
+
+<!-- 4. 버튼 이벤트 -->
+<div>
+  <h3>4. 버튼 이벤트 만들기</h3>
+  <button (click)="onClickMe()">버튼클릭</button>
+  <p>결과보기: {{ clickMessage }}</p>
+</div>
+
+
+<!-- 5. 심화 1 -->
+<div>
+  <h3>5. 버튼 누르면 입력한 내용 나오기</h3>
+  <p>입력한 내용: {{ myTxt }}</p>
+  <input #myTxts type="text"  />
+  <button (click)="clickAdd(myTxts.value); myTxts.value = ''" >입력하기</button>
+</div>
+
+
+<!-- 6. 심화 2 -->
+<div>
+  <h3>6. 심화2</h3>
+  <input #myItem type="text" />
+  <button (click)="add(myItem.value); myItem.value = ''" >입력하기</button>
+  <!-- <ul *ngFor="let myItem of myItems | keyvalue;">
+    <li>{{ myItem.value }}</li>    
+  </ul> -->
+</div>
+
+
+
+<!-- 7. 심화 3 (심화2를 컴포넌트로) -->
+<app-paragraph [myItems]="myItemss"></app-paragraph>
